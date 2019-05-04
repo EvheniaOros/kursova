@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <%= link_to "Назад", root_path %> 
+  <%= link_to "Розмістити резюме", new_employeesparam_path %> 
+<%= link_to "Знайти вакансію", employers_index_path %>
+  <%= link_to "Вийти",  destroy_user_session_path, method: :delete %>
+  <% else %>
+   <%= link_to "Увійти", new_user_session_path %>
+  <% end %>
