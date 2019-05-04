@@ -1,1 +1,31 @@
-edit.html.erb
+<%= form_for @employeesparam, url: employeesparams_path(@employeesparam.id) do |f| %>
+<% if @employeesparam.errors.any? %>
+  <div id="error_explanation"> 
+    <h2><%= pluralize(@employeesparam.errors.count, "error") %> prohibited this article from being saved:</h2>
+ 
+    <ul>
+    <% @employeesparam.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<p>Ім'я</p><%= f.text_field :firstname%><br>
+<p>Фамілія</p><%= f.text_field :lastname%><br>
+<p>Вік</p><%= f.text_field :age%><br>
+<p>Місто</p><%= f.text_field :city%><br>
+<p>Адреса</p><%= f.text_field :address%><br>
+<p>Номер телефону</p><%= f.text_field :phonenumber%><br>
+<hr>
+<p>Посада, яку б хотіли отримати</p><%= f.text_field :position%><br>
+<p>Бажане місто роботи</p><%= f.text_field :cityofwork%><br>
+<p>Вид занятості</p><%= f.text_field :typeofemployment%><br>
+<p>Освіта</p>
+<p>Рівень</p><%= f.text_field :education%><br>
+<p>Факультет</p><%= f.text_field :faculty%><br>
+<p>Характеристика</p><%= f.text_field :body%><br>
+
+<%= f.submit "Зберегти зміни" %>
+<% end %>
