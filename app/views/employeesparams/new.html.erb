@@ -1,3 +1,10 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
 <%= form_for @employeesparam, url: employeesparams_path do |f| %>
 <% if @employeesparam.errors.any? %>
   <div id="error_explanation"> 
@@ -10,22 +17,39 @@
     </ul>
   </div>
 <% end %>
-
-
-<p>Ім'я</p><%= f.text_field :firstname%><br>
-<p>Фамілія</p><%= f.text_field :lastname%><br>
-<p>Вік</p><%= f.text_field :age%><br>
-<p>Місто</p><%= f.text_field :city%><br>
-<p>Адреса</p><%= f.text_field :address%><br>
-<p>Номер телефону</p><%= f.text_field :phonenumber%><br>
-<hr>
-<p>Посада, яку б хотіли отримати</p><%= f.text_field :position%><br>
-<p>Бажане місто роботи</p><%= f.text_field :cityofwork%><br>
-<p>Вид занятості</p><%= f.text_field :typeofemployment%><br>
-<p>Освіта</p>
-<p>Рівень</p><%= f.text_field :education%><br>
-<p>Факультет</p><%= f.text_field :faculty%><br>
-<p>Характеристика</p><%= f.text_field :body%><br>
-
-<%= f.submit "Створити резюме" %>
+<h1>Створити резюме</h1>
+<div class="fields" >
+<h4>Ім'я</h4>
+<div class="pole"><%= f.text_field :firstname%></div>
+<h4>Фамілія</h4>
+<div class="pole"><%= f.text_field :lastname%></div>
+<h4>Вік</h4>
+<div class="pole"><%= f.text_field :age%></div>
+<h4>Місто</h4>
+<div class="pole"><%= f.text_field :city%></div>
+<h4>Адреса</h4>
+<div class="pole"><%= f.text_field :address%></div>
+<h4>Номер телефону</h4>
+<div class="pole"><%= f.text_field :phonenumber%></div>
+<hr >
+<h4>Посада, яку б хотіли отримати</h4>
+<div class="pole"><%= f.text_field :position%></div>
+<h4>Бажане місто роботи</h4>
+<div class="pole"><%= f.text_field :cityofwork%></div>
+<h4>Вид занятості</h4>
+<div class="pole"><%= f.text_field :typeofemployment%></div>
+<hr >
+<h2>Освіта</h2>
+<h4>Рівень</h4>
+<div class="pole"><%= f.text_field :education%></div>
+<h4>Факультет</h4>
+<div class="pole"><%= f.text_field :faculty%></div>
+<h4>Характеристика</h4>
+<div class="caracters"><%= f.text_field :body%></div>
+<div class="actions"><%= f.submit "Створити резюме" %></div>
+</div>
 <% end %>
+
+</body>
+</html>
+ 
