@@ -7,6 +7,7 @@
 <li class="nav-item">
   <li class="rezume"><%= link_to "Розмістити резюме |", new_employeesparam_path, class: "nav-link text-white" %> </li>
   <li class="vakansia"><%= link_to "Знайти вакансію |", employers_index_path, class: "nav-link text-white" %></li>
+  
   <li class="logout"><%= link_to "Вийти",  destroy_user_session_path, method: :delete, class: "nav-link text-white" %></li>
   <% else %>
    <li class="login"><%= link_to "Увійти", new_user_session_path, class: "nav-link text-white" %></li>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190513140516) do
+ActiveRecord::Schema.define(version: 20190519194732) do
 
   create_table "employeesparams", force: :cascade do |t|
     t.integer "user_id"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20190513140516) do
     t.integer "age"
     t.string "city"
     t.string "address"
-    t.integer "phonenumber"
+    t.bigint "phonenumber"
     t.string "position"
     t.string "cityofwork"
     t.string "typeofemployment"
@@ -31,8 +31,18 @@ ActiveRecord::Schema.define(version: 20190513140516) do
   end
 
   create_table "employers", force: :cascade do |t|
-    t.string "search"
+    t.string "title"
+    t.string "company"
+    t.string "fasename"
+    t.integer "phone"
     t.string "city"
+    t.string "placeofwork"
+    t.string "employment"
+    t.string "requirements"
+    t.string "descriptionsofwork"
+    t.string "requirementsforcandiate"
+    t.string "functional"
+    t.string "weoffer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

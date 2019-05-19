@@ -6,9 +6,10 @@ class EmployeesparamsController < ApplicationController
    	@employeesparam = Employeesparam.new
   end
   def create
+    
     @employeesparam = current_user.build_employeesparam(profile_params)
       if @employeesparam.save
-      redirect_to employeesparams_path(@employeesparam.id)
+      redirect_to employeesparams_path
       end
     end  
   def edit
@@ -18,12 +19,15 @@ end
     @employeesparam = Employeesparam.find(params[:id])
   end
   def update
-        @employeesparam = Employeesparam.find_by(user_id: current_user.id)
-     if @employeesparam.update(profile_params)
+
+      @employeesparam.update(profile_params)
+      if @employeesparam.save
       redirect_to employeesparams_path(@employeesparam.id) 
-  end
+    end
   end
   def destroy
+      @employeesparam.destroy
+      redirect_to employeesparams_path
   end
   private
   def profile_params
