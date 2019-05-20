@@ -19,10 +19,9 @@ end
     @employeesparam = Employeesparam.find(params[:id])
   end
   def update
-
-      @employeesparam.update(profile_params)
-      if @employeesparam.save
-      redirect_to employeesparams_path(@employeesparam.id) 
+       @employeesparam = Employeesparam.find_by(user_id: current_user.id)
+      if @employeesparam.update(profile_params)
+      redirect_to employeesparam_path(@employeesparam.id) 
     end
   end
   def destroy
@@ -34,3 +33,5 @@ end
     params.require(:employeesparam).permit(:user_id, :firstname, :lastname, :age, :city, :address, :phonenumber, :position, :cityofwork, :typeofemployment, :education, :faculty, :body)
   end
 end
+
+
