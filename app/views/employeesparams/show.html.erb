@@ -11,3 +11,9 @@
 Факультет: <%= @employeesparam.faculty %><br />
 Характеристика: <%= @employeesparam.body %><br />
 
+
+<% @employeesparams.each do |x| %>
+	<%= x.firstname %>
+
+	<hr>
+<% end %>

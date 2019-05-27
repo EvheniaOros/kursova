@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<%= form_for @employer, url: employers_path do |f| %>
+<% if @employer.errors.any? %>
+  <div id="error_explanation"> 
+    <h2><%= pluralize(@employer.errors.count, "error") %> prohibited this article from being saved:</h2>
+ 
+    <ul>
+    <% @employer.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<h1 class="text-dark">Розмістити вакансію</h1>
+<div class="fields" >
+	<div class="pole"><%= f.text_field :title%></div>
+<h4>Компанія</h4>
+<div class="pole"><%= f.text_field :company%></div>
+<h4>-----</h4>
+<div class="pole"><%= f.text_field :fasename%></div>
+<h4>Номер телефону</h4>
+<div class="pole"><%= f.text_field :phone%></div>
+<h4>Місто</h4>
+<div class="pole"><%= f.text_field :city%></div>
+<h4>Місце роботи</h4>
+<div class="pole"><%= f.text_field :placeofwork%></div>
+<hr >
+<h4>-------</h4>
+<div class="pole"><%= f.text_field :employment%></div>
+<h4>---------</h4>
+<div class="pole"><%= f.text_field :requirements%></div>
+<h4>Опис роботи</h4>
+<div class="pole"><%= f.text_field :descriptionsofwork%></div>
+<hr >
+<h4>Вимоги до кандидатів</h4>
+<div class="pole"><%= f.text_field :requirementsforcandiate%></div>
+<h4>Функціонал</h4>
+<div class="pole"><%= f.text_field :functional%></div>
+<h4>------</h4>
+<div class="caracters"><%= f.text_field :weoffer%></div>
+<div class="actions"><%= f.submit "Розмістити" %></div>
+</div>
+<% end %>
+
+</body>
+</html>
+ 

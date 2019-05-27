@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
+  
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get 'employeesparams/index'
-
-  get 'employees/index'
-
-  get 'employers/index'
   
   devise_for :users
   root 'pages#index'

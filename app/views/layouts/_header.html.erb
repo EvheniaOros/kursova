@@ -4,13 +4,6 @@
     <ul class="navbar-nav ml-auto">
       
 <% if user_signed_in? %>
-<li class="nav-item">
-	<% if current_user.employeesparam.nil? %>
-  <li class="rezume"><%= link_to "Розмістити резюме |", new_employeesparam_path, class: "nav-link text-white" %> </li>
-  <% else %>
-  <li class="rezume"><%= link_to "Моє резюме |", employeesparams_path, class: "nav-link text-white"  %></li>
-  <% end %>
-  <li class="vakansia"><%= link_to "Знайти вакансію |", employers_index_path, class: "nav-link text-white" %></li>
   
   <li class="logout"><%= link_to "Вийти",  destroy_user_session_path, method: :delete, class: "nav-link text-white" %></li>
   <% else %>

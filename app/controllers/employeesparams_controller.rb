@@ -1,15 +1,16 @@
 class EmployeesparamsController < ApplicationController
 	before_action :authenticate_user!
   def index
+
   end
    def new
    	@employeesparam = Employeesparam.new
   end
   def create
     
-    @employeesparam = current_user.build_employeesparam(profile_params)
+    @employeesparam = current_user.employeesparams.build(profile_params)
       if @employeesparam.save
-      redirect_to employeesparams_path
+      redirect_to employeesparams_path(@employeesparam.id)
       end
     end  
   def edit
@@ -17,6 +18,7 @@ class EmployeesparamsController < ApplicationController
 end
   def show
     @employeesparam = Employeesparam.find(params[:id])
+    @employeesparams = Employeesparam.all
   end
   def update
        @employeesparam = Employeesparam.find_by(user_id: current_user.id)
