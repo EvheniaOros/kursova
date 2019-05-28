@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  
 
-  get 'catalogs/index'
+
+  
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#index'
   resources :employees
-  resources :employers
+  resources :employers do
+    resources :employ_comments
+  end
   resources :employeesparams
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
