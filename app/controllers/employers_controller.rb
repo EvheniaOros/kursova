@@ -29,6 +29,6 @@ class EmployersController < ApplicationController
   end
   private
   def employer_params
-    params.require(:employer).permit(:user_id, :title, :company, :fasename, :phone, :city, :placeofwork, :employment, :requirements, :descriptionsofwork, :requirementsforcandiate, :functional, :weoffer)
+    params.require(:employer).permit(:user_id, :title, :company, :fasename, :phone, :city, :placeofwork, :employment, :requirements, :descriptionsofwork, :requirementsforcandiate, :functional, :weoffer, :category_id)
   end
 end

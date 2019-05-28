@@ -3,7 +3,7 @@ class CreateEmployers < ActiveRecord::Migration[5.1]
     create_table :employers do |t|
       t.string :title
       t.string :company
-      t.string :fasename
+      t.string :category_id
       t.integer :phone
       t.string :city
       t.string :placeofwork
