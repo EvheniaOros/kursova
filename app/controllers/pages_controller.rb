@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    
+    @lolka = Category.find_by(id: params[:category_id])
   end
    def new
   end
