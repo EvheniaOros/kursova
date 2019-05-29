@@ -23,7 +23,8 @@
 <h4>Компанія</h4>
 <div class="pole"><%= f.text_field :company%></div>
   <h4>Категорії</h4> 
-  <%= f.select :category_id  , Category.all.collect {|p| [ p.name, p.id ]}, :prompt => 'Оберіть категорію'%> <br>
+ <%= f.select :category_id  , Category.all.collect {|p| [ p.title, p.id ] }, :prompt => 'Оберіть категорію'%> <br>
+
 <h4>Номер телефону</h4>
 <div class="pole"><%= f.text_field :phone%></div>
 <h4>Місто</h4>

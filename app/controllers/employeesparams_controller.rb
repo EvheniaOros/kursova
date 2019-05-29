@@ -8,9 +8,11 @@ class EmployeesparamsController < ApplicationController
   end
   def create
     
-    @employeesparam = current_user.employeesparams.build(profile_params)
+    @employeesparam = current_user.employeesparam.build(profile_params)
       if @employeesparam.save
       redirect_to employeesparams_path(@employeesparam.id)
+      else 
+        render 'new'
       end
     end  
   def edit

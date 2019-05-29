@@ -1,10 +1,5 @@
  
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+
 <%= form_for @employeesparam, url: employeesparams_path do |f| %>
 <% if @employeesparam.errors.any? %>
   <div id="error_explanation"> 
@@ -12,7 +7,7 @@
  
     <ul>
     <% @employeesparam.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <div class="alert alert-danger"><%= msg %></div>
     <% end %>
     </ul>
   </div>
@@ -50,6 +45,5 @@
 </div>
 <% end %>
 
-</body>
-</html>
+
  

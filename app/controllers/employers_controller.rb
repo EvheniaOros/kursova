@@ -6,9 +6,9 @@ class EmployersController < ApplicationController
     @employer = Employer.new
   end
   def create
-     @employer = current_user.build_employer(employer_params)
+     @employer = current_user.employer.build(employer_params)
       if @employer.save
-      redirect_to employer_path
+      redirect_to employer_path(@employer.id)
       end
   end
   def edit

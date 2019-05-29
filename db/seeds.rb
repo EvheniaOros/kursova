@@ -4,25 +4,11 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+#   Character.create(name: 'Luke', movie: movies.first
 
-Category.create!(name: 'Iнформаційні технології')
-Category.create!(name: 'Адміністрація, керівництво середньої ланки ')
-Category.create!(name: 'Бухгалтерія')
-Category.create!(name: 'Готельно-ресторанний бізнес, туризм')
-Category.create!(name: 'Дизайн, мистецтво')
-Category.create!(name: 'Краса, фітнес, спорт')
-Category.create!(name: 'Логістика')
-Category.create!(name: 'Маркетинг, реклама, PR')
-Category.create!(name: 'Медицина, фармацевтика ')
-Category.create!(name: 'Нерухомість')
-Category.create!(name: 'Охорона, безпека')
-Category.create!(name: 'Продаж, закупівля')
-Category.create!(name: 'Робочі спеціальності, виробництво')
-Category.create!(name: 'Сільське господарство')
-Category.create!(name: 'ЗМІ, видавництво, поліграфія')
-Category.create!(name: 'Будівництво, архітектура')
-Category.create!(name: 'Сфера обслуговування')
-Category.create!(name: 'Транспорт, автобізнес')
-Category.create!(name: 'Фінанси, банк')
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: '1234567890', password_confirmation: '1234567890') if Rails.env.production?
+
+Category.create(name:'Cat')
+Category.create(title:'Dog')
