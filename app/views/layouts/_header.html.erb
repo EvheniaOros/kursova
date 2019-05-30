@@ -1,18 +1,13 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <%= link_to "Home", root_path, class: "navbar-brand" %>
-   
+    <%= link_to "YourWork", root_path, class: "navbar-brand" %>
+
     <ul class="navbar-nav ml-auto">
-      
+
 <% if user_signed_in? %>
-  
+
   <li class="logout"><%= link_to "Вийти",  destroy_user_session_path, method: :delete, class: "nav-link text-white" %></li>
   <% else %>
    <li class="login"><%= link_to "Увійти", new_user_session_path, class: "nav-link text-white" %></li>
   <% end %>
       </ul>
 </nav>
-
-      
-
-
-

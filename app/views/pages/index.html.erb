@@ -13,8 +13,9 @@
 </div>
 
 
-
-
+<div class="div2">
+<p>Пошук по категоріям:</p></ br>
 <% @categories.each do |x| %>
-	<%= link_to x.title, category_path(x) %> <br>
+	<%= link_to x.title, category_path(x),class: " text-dark"  %> <br>
 <% end %>
+</div>

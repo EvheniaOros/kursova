@@ -1,4 +1,12 @@
 
+
+<p class="vak">Всі запити, які були знайдені</p>
+
+
 <% @category.employers.each do |x| %>
-  <%= x.title %></ br>
+<div class="div3">
+  <strong><h3><%= x.title %></h3></strong><br>
+  <strong><h5><%= x.company %></h5></strong>
+  <strong><h5><%= x.phone %></h5></strong>
+  </div><br>
 <% end %>
