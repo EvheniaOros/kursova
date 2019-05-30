@@ -1,11 +1,13 @@
- <%= @employer.title %><br />
-Компанія:<%= @employer.company %><br />
-Номер телефону: <%= @employer.phone %><br />
-Місто: <%= @employer.city %><br />
-Місце роботи: <%= @employer.placeofwork %><br />
-Вид зайнятості: <%= @employer.employment %><br />
-Вимоги: <%= @employer.requirements %><br />
-Опис роботи: <%= @employer.descriptionsofwork %><br />
-Вимоги до кандидата: <%= @employer.requirementsforcandiate %><br />
-Функціонал: <%= @employer.functional %><br />
-Ми пропонуємо: <%= @employer.weoffer %><br />
+<div class="Vakansia">
+ <p class="vak"><%= @employer.title %></p><br />
+<h2><strong>Компанія:</strong><%= @employer.company %></h2><br />
+<h5><strong>Номер телефону:</strong> <%= @employer.phone %></h5><br />
+<h5><strong>Місто:</strong> <%= @employer.city %></h5><br />
+<h5><strong>Місце роботи:</strong> <%= @employer.placeofwork %></h5><br />
+<h5><strong>Вид зайнятості:</strong> <%= @employer.employment %></h5><br />
+<h5><strong>Опис роботи:</strong> <%= @employer.descriptionsofwork %></h5><br />
+<h5><strong>Вимоги до кандидата:</strong> <%= @employer.requirementsforcandiate %></h5><br />
+<h5><strong>Ми пропонуємо:</strong> <%= @employer.weoffer %></h5><br />
+</div>
+<li ><%= link_to "Редагувати", edit_employer_path(current_user.id), class: "btn btn-outline-dark"  %></li><br />
+<li ><%= link_to "Видалити", employer_path(current_user.id), method: :delete , class: "btn btn-outline-dark"  %></li>

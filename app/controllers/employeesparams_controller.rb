@@ -1,7 +1,7 @@
 class EmployeesparamsController < ApplicationController
 	before_action :authenticate_user!
   def index
-		user_find
+			user_find
   end
    def new
    	@employeesparam = Employeesparam.new

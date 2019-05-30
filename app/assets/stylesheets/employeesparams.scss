@@ -9,8 +9,11 @@
 .pole {
 	padding: 10px;
     margin-left: 20px;
-     
+
 }
+li{
+    list-style: none;
+  }
 .caracters {
 	padding: 10px;
     margin-left: 20px;
@@ -21,7 +24,7 @@ h1 {
 	text-align: center;
 }
 h4 {
-	color: white; 
+	color: white;
 	margin-left: 30px;
 }
 .actions {
@@ -30,21 +33,19 @@ h4 {
   cursor: pointer;
 }
 h2 {
-	color: white; 
+	color: white;
 }
 hr {
 	background-color: white;
 }
 .body {
-	
+
 }
 .items {
 	color: white;
 	padding: 9px;
 }
- li{
-    list-style: none;
-  }
+ 
  .buttons {
     margin-left: 345px;
     padding: 2px;

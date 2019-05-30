@@ -1,15 +1,21 @@
+
+<div class="Vakansia">
 <% @employeesparams.each do |x| %>
-Ім'я:	<%= x.firstname %><br>
-Фамілія:	<%= x.lastname %><br>
-Вік:	<%= x.age %><br>
-Місто:	<%= x.city %><br>
-Адреса:	<%= x.address %><br>
-Номер телефону:	<%= x.phonenumber %><br>
-Посада, яку б хотіли отримати:	<%= x.position%><br>
-Бажане місто роботи: <%= x.cityofwork %><br>
-Вид занятості: <%= x.typeofemployment %><br>
-Рівень:	<%= x.education %><br>
-Факультет:	<%= x.faculty%><br>
-Характеристика:	<%= x.body %><br>
+<h5><strong>Ім'я:</strong>	<%= x.firstname %></h5><br>
+<h5><strong>Фамілія:</strong>	<%= x.lastname %></h5><br>
+<h5><strong>Вік:</strong>	<%= x.age %></h5><br>
+<h5><strong>Місто:</strong>	<%= x.city %></h5><br>
+<h5><strong>Адреса:</strong>	<%= x.address %></h5><br>
+<h5><strong>Номер телефону:</strong>	<%= x.phonenumber %></h5><br>
+<h5><strong>Посада, яку б хотіли отримати:</strong>	<%= x.position%></h5><br>
+<h5><strong>Бажане місто роботи:</strong> <%= x.cityofwork %></h5><br>
+<h5><strong>Вид занятості:</strong> <%= x.typeofemployment %></h5><br>
+<h5><strong>Рівень:</strong>	<%= x.education %></h5><br>
+<h5><strong>Факультет:</strong>	<%= x.faculty%></h5><br>
+<h5><strong>Характеристика:</strong>	<%= x.body %></h5><br>
+<li ><%= link_to "Редагувати", edit_employeesparam_path(current_user.id), class: "btn btn-outline-dark"  %></li><br />
+<li ><%= link_to "Видалити", employeesparam_path(current_user.id), method: :delete , class: "btn btn-outline-dark"  %></li>
 	<hr>
+
 <% end %>
+</div>
