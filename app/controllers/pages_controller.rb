@@ -1,17 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @lolka = Category.find_by(id: params[:category_id])
-  end
-   def new
-  end
-  def create
-  end
-  def edit
-  end
-  def show
-  end
-  def update
-  end
-  def destroy
+    @categories = Category.all
   end
 end

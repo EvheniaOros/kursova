@@ -14,5 +14,6 @@
 
 
 
-
- <%= link_to "category_employers_path", category_employers_path %>
+<% @categories.each do |x| %>
+	<%= link_to x.title, category_path(x) %> <br>
+<% end %>

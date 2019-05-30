@@ -1,20 +1,20 @@
 class EmployeesparamsController < ApplicationController
 	before_action :authenticate_user!
   def index
-
+		user_find
   end
    def new
    	@employeesparam = Employeesparam.new
   end
   def create
-    
+
     @employeesparam = current_user.employeesparam.build(profile_params)
       if @employeesparam.save
-      redirect_to employeesparams_path(@employeesparam.id)
-      else 
+      redirect_to employeesparam_path(@employeesparam.id)
+      else
         render 'new'
       end
-    end  
+    end
   def edit
     @employeesparam = current_user.employeesparam
 end
@@ -25,7 +25,7 @@ end
   def update
        @employeesparam = Employeesparam.find_by(user_id: current_user.id)
       if @employeesparam.update(profile_params)
-      redirect_to employeesparam_path(@employeesparam.id) 
+      redirect_to employeesparam_path(@employeesparam.id)
     end
   end
   def destroy
@@ -36,6 +36,7 @@ end
   def profile_params
     params.require(:employeesparam).permit(:user_id, :firstname, :lastname, :age, :city, :address, :phonenumber, :position, :cityofwork, :typeofemployment, :education, :faculty, :body)
   end
+	def user_find
+		@user = User.find_by(id: params[:id])
+	end
 end
-
-

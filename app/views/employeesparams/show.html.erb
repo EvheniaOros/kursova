@@ -1,30 +1,15 @@
-Ім'я: <%= @employeesparam.firstname %><br />
-Фамілія:<%= @employeesparam.lastname %><br />
-Вік: <%= @employeesparam.age %><br />
-Місто: <%= @employeesparam.city %><br />
-Адреса: <%= @employeesparam.address %><br />
-Номер телефону: <%= @employeesparam.phonenumber %><br />
-Посада, яку б хотіли отримати: <%= @employeesparam.position %><br />
-Бажане місто роботи: <%= @employeesparam.cityofwork %><br />
-Вид занятості: <%= @employeesparam.typeofemployment %><br />
-Рівень: <%= @employeesparam.education %><br />
-Факультет: <%= @employeesparam.faculty %><br />
-Характеристика: <%= @employeesparam.body %><br />
-
-
 <% @employeesparams.each do |x| %>
-	<%= x.firstname %>
-	<%= x.lastname %>
-	<%= x.age %>
-	<%= x.city %>
-	<%= x.address %>
-	<%= x.phonenumber %>
-	<%= x.position%>
-	<%= x.cityofwork %>
-	<%= x.typeofemployment %>
-	<%= x.education %>
-	<%= x.faculty%>
-	<%= x.body %>
-
+Ім'я:	<%= x.firstname %><br>
+Фамілія:	<%= x.lastname %><br>
+Вік:	<%= x.age %><br>
+Місто:	<%= x.city %><br>
+Адреса:	<%= x.address %><br>
+Номер телефону:	<%= x.phonenumber %><br>
+Посада, яку б хотіли отримати:	<%= x.position%><br>
+Бажане місто роботи: <%= x.cityofwork %><br>
+Вид занятості: <%= x.typeofemployment %><br>
+Рівень:	<%= x.education %><br>
+Факультет:	<%= x.faculty%><br>
+Характеристика:	<%= x.body %><br>
 	<hr>
 <% end %>

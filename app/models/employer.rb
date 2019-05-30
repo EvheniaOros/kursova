@@ -1,6 +1,6 @@
 class Employer < ApplicationRecord
     belongs_to :user
-    
-    has_one :category
+
+    belongs_to :category
     has_many :employ_comment, dependent: :destroy
 end
