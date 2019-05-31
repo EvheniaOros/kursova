@@ -1,21 +1,19 @@
-
 <div class="Vakansia">
-<% @employeesparams.each do |x| %>
-<h5><strong>Ім'я:</strong>	<%= x.firstname %></h5><br>
-<h5><strong>Фамілія:</strong>	<%= x.lastname %></h5><br>
-<h5><strong>Вік:</strong>	<%= x.age %></h5><br>
-<h5><strong>Місто:</strong>	<%= x.city %></h5><br>
-<h5><strong>Адреса:</strong>	<%= x.address %></h5><br>
-<h5><strong>Номер телефону:</strong>	<%= x.phonenumber %></h5><br>
-<h5><strong>Посада, яку б хотіли отримати:</strong>	<%= x.position%></h5><br>
-<h5><strong>Бажане місто роботи:</strong> <%= x.cityofwork %></h5><br>
-<h5><strong>Вид занятості:</strong> <%= x.typeofemployment %></h5><br>
-<h5><strong>Рівень:</strong>	<%= x.education %></h5><br>
-<h5><strong>Факультет:</strong>	<%= x.faculty%></h5><br>
-<h5><strong>Характеристика:</strong>	<%= x.body %></h5><br>
-<div class="link"><li ><%= link_to "Редагувати", edit_employeesparam_path(x), class: "btn btn-outline-dark"  %></li></div><br />
-<div class="link"><li ><%= link_to "Видалити", employeesparam_path(x), method: :delete , class: "btn btn-outline-dark"  %></li></div>
-	<hr>
-
-<% end %>
+	<% @employeesparams.each do |x| %>
+		<h5><strong>Ім'я:</strong>	<%= x.firstname %></h5><br>
+		<h5><strong>Фамілія:</strong>	<%= x.lastname %></h5><br>
+		<h5><strong>Вік:</strong>	<%= x.age %></h5><br>
+		<h5><strong>Місто:</strong>	<%= x.city %></h5><br>
+		<h5><strong>Адреса:</strong>	<%= x.address %></h5><br>
+		<h5><strong>Номер телефону:</strong>	<%= x.phonenumber %></h5><br>
+		<h5><strong>Посада, яку б хотіли отримати:</strong>	<%= x.position%></h5><br>
+		<h5><strong>Бажане місто роботи:</strong> <%= x.cityofwork %></h5><br>
+		<h5><strong>Вид занятості:</strong> <%= x.typeofemployment %></h5><br>
+		<h5><strong>Рівень:</strong>	<%= x.education %></h5><br>
+		<h5><strong>Факультет:</strong>	<%= x.faculty%></h5><br>
+		<h5><strong>Характеристика:</strong>	<%= x.body %></h5><br>
+		<div class="link"><li ><%= link_to "Редагувати", edit_user_employeesparam_path(@user, x), class: "btn btn-outline-dark"  %></li></div><br />
+		<div class="link"><li ><%= link_to "Видалити", user_employeesparam_path(@user, x), method: :delete , class: "btn btn-outline-dark"  %></li></div>
+		<hr>
+	<% end %>
 </div>

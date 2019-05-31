@@ -6,16 +6,16 @@
 
     <div class="row">
 			<% if user_signed_in? %>
-			<% if current_user.employeesparam.nil?%>
-			<div class="col btn btn-light"><%= link_to "Розмістити резюме", new_employeesparam_path, class: "nav-link text-dark" %></div>
+			<% if current_user.employeesparams.nil? %>
+			<div class="col btn btn-light"><%= link_to "Розмістити резюме", new_user_employeesparam_path(current_user.id), class: "nav-link text-dark" %></div>
 
 			<% else %>
-			<div class="col btn btn-light"><%= link_to "Розмістити резюме", new_employeesparam_path, class: "nav-link text-dark" %></div>
+			<div class="col btn btn-light"><%= link_to "Розмістити резюме", new_user_employeesparam_path(current_user.id), class: "nav-link text-dark" %></div>
 
-			<div class="col btn btn-light"><%= link_to "Мої резюме", employeesparam_path(current_user.id), class: "nav-link text-dark" %></div>
+			<div class="col btn btn-light"><%= link_to "Мої резюме", user_employeesparams_path(current_user.id), class: "nav-link text-dark" %></div>
     <% end%>
 		 <div class="col btn btn-light"><%= link_to "Моя вакансія", employer_path(current_user.id), class: "nav-link text-dark" %></div>
-		 
+
    <div class="col btn btn-light"><%= link_to "Розмістити вакансію", new_employer_path, class: "nav-link text-dark" %></div>
      <% end %>
 </div>
