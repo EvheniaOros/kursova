@@ -16,7 +16,7 @@ class EmployeesparamsController < ApplicationController
       end
     end
   def edit
-    @employeesparam = current_user.employeesparam
+    @employeesparam = Employeesparam.find_by(id: params[:id])
 end
   def show
     @employeesparam = Employeesparam.find(params[:id])
@@ -29,8 +29,9 @@ end
     end
   end
   def destroy
+			@employeesparam = Employeesparam.find_by(id: params[:id])
       @employeesparam.destroy
-      redirect_to employeesparams_path
+      redirect_to root_path
   end
   private
   def profile_params
