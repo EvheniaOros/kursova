@@ -17,6 +17,7 @@ class EmployeesparamsController < ApplicationController
     end
   def edit
     @employeesparam = Employeesparam.find_by(id: params[:id])
+
 end
   def show
     @employeesparam = Employeesparam.find(params[:id])

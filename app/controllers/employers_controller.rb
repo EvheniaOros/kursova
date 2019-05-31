@@ -12,7 +12,7 @@ class EmployersController < ApplicationController
       end
   end
   def edit
-    @employer = current_user.employer
+    @employer = Employer.find_by(id: params[:id])
   end
   def show
     @employer = Employer.find(params[:id])
@@ -24,12 +24,13 @@ class EmployersController < ApplicationController
     end
   end
   def destroy
+		@employer = Employer.find_by(id: params[:id])
     @employer.destroy
-      redirect_to employer_path
+      redirect_to root_path
   end
   private
   def employer_params
-    params.require(:employer).permit(:user_id, :title, :company, :fasename, :phone, :city, :placeofwork, :employment, :requirements, :descriptionsofwork, :requirementsforcandiate, :functional, :weoffer, :category_id)
+    params.require(:employer).permit(:user_id, :title, :company, :phone, :city, :placeofwork, :employment, :descriptionsofwork, :requirementsforcandiate, :weoffer, :category_id)
   end
-	
+
 end
