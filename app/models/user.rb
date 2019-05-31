@@ -6,6 +6,5 @@ class User < ApplicationRecord
 
          has_many :employeesparam
          has_many :employer 
-         has_many :employ_comment
 
 end
