@@ -5,16 +5,16 @@
 	<p>Все ще не можеш знайти роботу своєї мрії? Тоді тобі до нас, у нас ти швидко знайдеш вакансію для себе</p>
 
     <div class="row">
-  <div class="col btn btn-light"><%= link_to "Розмістити резюме", new_employeesparam_path, class: "nav-link text-dark" %></div>
+   <div class="col btn btn-light"><%= link_to "Розмістити резюме", new_employeesparam_path, class: "nav-link text-dark" %></div>
+	 <div class="col btn btn-light"><%= link_to "Розмістити вакансію", new_employer_path, class: "nav-link text-dark" %></div>
 
-  <div class="col btn btn-light"><%= link_to "Розмістити вакансію", new_employer_path, class: "nav-link text-dark" %></div>
-
+  
 </div>
 </div>
 
 
 <div class="div2">
-<p>Пошук по категоріям:</p></ br>
+<h2>Пошук по категоріям:</h2><br>
 <% @categories.each do |x| %>
 	<%= link_to x.title, category_path(x),class: " text-dark"  %> <br>
 <% end %>

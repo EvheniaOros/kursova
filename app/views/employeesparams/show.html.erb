@@ -13,8 +13,8 @@
 <h5><strong>Рівень:</strong>	<%= x.education %></h5><br>
 <h5><strong>Факультет:</strong>	<%= x.faculty%></h5><br>
 <h5><strong>Характеристика:</strong>	<%= x.body %></h5><br>
-<li ><%= link_to "Редагувати", edit_employeesparam_path(x), class: "btn btn-outline-dark"  %></li><br />
-<li ><%= link_to "Видалити", employeesparam_path(x), method: :delete , class: "btn btn-outline-dark"  %></li>
+<div class="link"><li ><%= link_to "Редагувати", edit_employeesparam_path(x), class: "btn btn-outline-dark"  %></li></div><br />
+<div class="link"><li ><%= link_to "Видалити", employeesparam_path(x), method: :delete , class: "btn btn-outline-dark"  %></li></div>
 	<hr>
 
 <% end %>

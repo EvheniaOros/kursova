@@ -24,24 +24,11 @@ ActiveRecord::Schema.define(version: 20190529160429) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "catalogs", force: :cascade do |t|
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "employer_id"
-  end
-
-  create_table "employ_comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "employeesparams", force: :cascade do |t|

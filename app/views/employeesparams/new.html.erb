@@ -1,10 +1,10 @@
- 
+
 
 <%= form_for @employeesparam, url: employeesparams_path do |f| %>
 <% if @employeesparam.errors.any? %>
-  <div id="error_explanation"> 
+  <div id="error_explanation">
     <h2><%= pluralize(@employeesparam.errors.count, "error") %> prohibited this article from being saved:</h2>
- 
+
     <ul>
     <% @employeesparam.errors.full_messages.each do |msg| %>
       <div class="alert alert-danger"><%= msg %></div>
@@ -34,7 +34,7 @@
 <h4>Вид занятості</h4>
 <div class="pole"><%= f.text_field :typeofemployment%></div>
 <hr >
-<h2>Освіта</h2>
+<h1>Освіта</h1>
 <h4>Рівень</h4>
 <div class="pole"><%= f.text_field :education%></div>
 <h4>Факультет</h4>
@@ -44,6 +44,3 @@
 <div class="actions"><%= f.submit "Створити" %></div>
 </div>
 <% end %>
-
-
- 
