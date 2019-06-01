@@ -1,6 +1,8 @@
 <div class="Vakansia">
 	<% @user.employeesparams.each do |x| %>
-		<h5><strong>Ім'я:</strong>	<%= x.firstname %></h5><br>
+		
+		<h5><strong>Вакансія: </strong> <%= x.employer.title %> </h5><br>
+		<h5><strong>Ім'я:</strong> 	<%= x.firstname %></h5><br>
 		<h5><strong>Фамілія:</strong>	<%= x.lastname %></h5><br>
 		<h5><strong>Вік:</strong>	<%= x.age %></h5><br>
 		<h5><strong>Місто:</strong>	<%= x.city %></h5><br>

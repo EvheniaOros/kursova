@@ -1,7 +1,7 @@
 class EmployeesparamsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :user_find, only: [:index, :show, :destroy]
-
+  before_action :employe_find
 	def index
 		@employeesparam = Employeesparam.find_by(id: params[:id])
     @employeesparams = Employeesparam.all
@@ -14,7 +14,7 @@ class EmployeesparamsController < ApplicationController
 	def create
     @employeesparam = current_user.employeesparams.build(profile_params)
       if @employeesparam.save
-      redirect_to user_employeesparams_path
+      redirect_to user_employeesparams_path(current_user.id)
       else
         render 'new'
       end
@@ -44,10 +44,14 @@ class EmployeesparamsController < ApplicationController
 
 	private
   def profile_params
-    params.require(:employeesparam).permit(:user_id, :firstname, :lastname, :age, :city, :address, :phonenumber, :position, :cityofwork, :typeofemployment, :education, :faculty, :body)
+    params.require(:employeesparam).permit(:user_id, :employer_id,:firstname, :lastname, :age, :city, :address, :phonenumber, :position, :cityofwork, :typeofemployment, :education, :faculty, :body)
   end
 
 	def user_find
 		@user = User.find_by(id: params[:user_id])
-	end
+  end
+  
+   def employe_find
+    @employer = Employer.find_by(id: params[:employer_id])
+  end
 end

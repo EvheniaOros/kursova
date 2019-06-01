@@ -2,6 +2,7 @@ class CreateEmployeesparams < ActiveRecord::Migration[5.1]
   def change
     create_table :employeesparams do |t|
       t.integer :user_id
+      t.integer :employer_id
       t.string :firstname
       t.string :lastname
       t.integer :age

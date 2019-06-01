@@ -1,2 +1,18 @@
-<h1>Employers#index</h1>
-<p>Find me in app/views/employers/index.html.erb</p>
+<% @user.employers.each do |x| %>
+    <div class="Vakansia">
+        <p class="vak"><%= x.title %></p><br />
+        <h2><strong>Компанія:</strong><%= x.company %></h2><br />
+        <h5><strong>Номер телефону:</strong> <%= x.phone %></h5><br />
+        <h5><strong>Місто:</strong> <%= x.city %></h5><br />
+        <h5><strong>Місце роботи:</strong> <%= x.placeofwork %></h5><br />
+        <h5><strong>Вид зайнятості:</strong> <%= x.employment %></h5><br />
+        <h5><strong>Опис роботи:</strong> <%= x.descriptionsofwork %></h5><br />
+        <h5><strong>Вимоги до кандидата:</strong> <%= x.requirementsforcandiate %></h5><br />
+        <h5><strong>Ми пропонуємо:</strong> <%= x.weoffer %></h5><br />
+    </div>
+    <div class="link1">
+        <li>
+            <%= link_to "Редагувати", edit_user_employer_path(current_user.id, x), class: "btn btn-outline-dark"  %> <br/>
+        </li>
+    </div>
+<% end %>

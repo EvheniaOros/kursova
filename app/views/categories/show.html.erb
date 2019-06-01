@@ -1,12 +1,14 @@
-
-
-<p class="vak">Всі запити, які були знайдені</p>
-
-
-<% @category.employers.each do |x| %>
-<div class="div3">
-  <strong><h3><%= x.title %></h3></strong><br>
-  <strong><h5><%= x.company %></h5></strong>
-  <strong><h5><%= x.phone %></h5></strong>
-  </div><br>
+<% if @category.employers == [] %>
+  <p class="vak">Вакансії поки відсутні 😢</p>
+<% else %>
+  <p class="vak">Знайдено <%= @category.employers.count %> вакансій </p>
+  <% @category.employers.each do |x| %>
+    <%= link_to category_employer_path(@category, x) do %>
+      <div class="div3">
+        <strong><h3><%= x.title %></h3></strong><br>
+        <strong><h5><%= x.company %></h5></strong>
+        <strong><h5><%= x.phone %></h5></strong>
+      </div><br>
+      <% end %>
+  <% end %>
 <% end %>

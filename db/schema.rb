@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20190529160429) do
 
   create_table "employeesparams", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "employer_id"
     t.string "firstname"
     t.string "lastname"
     t.integer "age"

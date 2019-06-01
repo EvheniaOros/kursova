@@ -1,12 +1,47 @@
 <div class="Vakansia">
- <p class="vak"><%= @employer.title %></p><br />
-<h2><strong>Компанія:</strong><%= @employer.company %></h2><br />
-<h5><strong>Номер телефону:</strong> <%= @employer.phone %></h5><br />
-<h5><strong>Місто:</strong> <%= @employer.city %></h5><br />
-<h5><strong>Місце роботи:</strong> <%= @employer.placeofwork %></h5><br />
-<h5><strong>Вид зайнятості:</strong> <%= @employer.employment %></h5><br />
-<h5><strong>Опис роботи:</strong> <%= @employer.descriptionsofwork %></h5><br />
-<h5><strong>Вимоги до кандидата:</strong> <%= @employer.requirementsforcandiate %></h5><br />
-<h5><strong>Ми пропонуємо:</strong> <%= @employer.weoffer %></h5><br />
+    <p class="vak"><%= @employer.title %></p><br />
+    <h2><strong>Компанія:</strong><%= @employer.company %></h2><br />
+    <h5><strong>Номер телефону:</strong> <%= @employer.phone %></h5><br />
+    <h5><strong>Місто:</strong> <%= @employer.city %></h5><br />
+    <h5><strong>Місце роботи:</strong> <%= @employer.placeofwork %></h5><br />
+    <h5><strong>Вид зайнятості:</strong> <%= @employer.employment %></h5><br />
+    <h5><strong>Опис роботи:</strong> <%= @employer.descriptionsofwork %></h5><br />
+    <h5><strong>Вимоги до кандидата:</strong> <%= @employer.requirementsforcandiate %></h5><br />
+    <h5><strong>Ми пропонуємо:</strong> <%= @employer.weoffer %></h5><br />
 </div>
-<div class="link1"><li ><%= link_to "Редагувати", edit_employer_path(current_user.id), class: "btn btn-outline-dark"  %></li></div><br />
+
+<% if @employer.user_id == current_user.id %>
+    <div class="link1">
+        <li>
+            <%= link_to "Редагувати", edit_user_employer_path(current_user.id, @employer), class: "btn btn-outline-dark"  %> <br/>
+        </li>
+    </div>
+
+    <% @employer.employeesparams.each do |x| %>
+        <div class="Vakansia">
+            <h5><strong>Ім'я:</strong>	<%= x.firstname %></h5><br>
+            <h5><strong>Фамілія:</strong>	<%= x.lastname %></h5><br>
+            <h5><strong>Вік:</strong>	<%= x.age %></h5><br>
+            <h5><strong>Місто:</strong>	<%= x.city %></h5><br>
+            <h5><strong>Адреса:</strong>	<%= x.address %></h5><br>
+            <h5><strong>Номер телефону:</strong>	<%= x.phonenumber %></h5><br>
+            <h5><strong>Посада, яку б хотіли отримати:</strong>	<%= x.position%></h5><br>
+            <h5><strong>Бажане місто роботи:</strong> <%= x.cityofwork %></h5><br>
+            <h5><strong>Вид занятості:</strong> <%= x.typeofemployment %></h5><br>
+            <h5><strong>Рівень:</strong> <%= x.education %></h5><br>
+            <h5><strong>Факультет:</strong>	<%= x.faculty%></h5><br>
+            <h5><strong>Характеристика:</strong> <%= x.body %></h5><br>
+            <hr>
+        </div>
+    <% end %>
+<% else %>
+    <div class="link1">
+        <li>
+            <%= link_to "Відправити моє резюме", new_category_employer_employeesparam_path(@category, @employer) %>
+        </li>
+    </div>
+<% end %>
+
+
+
+
