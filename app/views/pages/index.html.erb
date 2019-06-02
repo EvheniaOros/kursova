@@ -1,10 +1,10 @@
 <div class="div1">
 	<h1>Сайт пошуку роботи №1 в Україні! </h1>
 	<p>Все ще не можеш знайти роботу своєї мрії? Тоді тобі до нас, у нас ти швидко знайдеш вакансію для себе</p>
-  <div class="row">
-		<% if user_signed_in? %>
-			<div class="col btn btn-light"><%= link_to "Мої резюме", user_employeesparams_path(current_user.id), class: "nav-link text-dark" %></div>
-	 		<div class="col btn btn-light"><%= link_to "Моя вакансія", user_employers_path(current_user.id), class: "nav-link text-dark" %></div>
+<div class="row">
+  <% if user_signed_in? %>
+   <div class="col btn btn-light"><%= link_to "Мої резюме", user_employeesparams_path(current_user.id), class: "nav-link text-dark" %></div>
+   <div class="col btn btn-light"><%= link_to "Моя вакансія", user_employers_path(current_user.id), class: "nav-link text-dark" %></div>
   		<div class="col btn btn-light"><%= link_to "Розмістити вакансію", new_user_employer_path(current_user.id), class: "nav-link text-dark" %></div>
     <% end %>
 	</div>
