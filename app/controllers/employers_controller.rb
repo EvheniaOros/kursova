@@ -13,6 +13,8 @@ class EmployersController < ApplicationController
     @employer = current_user.employers.build(employer_params)
     if @employer.save
       redirect_to user_employer_path(current_user.id, @employer)
+    else
+      render 'new'
     end
   end
 
@@ -22,7 +24,7 @@ class EmployersController < ApplicationController
 
 	def show
     @employer = Employer.find(params[:id])
-    @employeesparams = Employeesparam.all 
+    @employeesparams = Employeesparam.all
   end
 
 	def update
@@ -41,11 +43,11 @@ class EmployersController < ApplicationController
   def employer_params
     params.require(:employer).permit(:user_id, :title, :company, :phone, :city, :placeofwork, :employment, :descriptionsofwork, :requirementsforcandiate, :weoffer, :category_id)
   end
-  
+
   def user_find
 		@user = User.find_by(id: params[:user_id])
   end
-  
+
   def category_find
     @category = Category.find_by(id: params[:category_id])
   end

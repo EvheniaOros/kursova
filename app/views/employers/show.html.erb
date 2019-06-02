@@ -35,13 +35,9 @@
         </div>
     <% end %>
 <% else %>
-    <div class="link1">
+    <div class="link1 ">
         <li>
-            <%= link_to "Відправити моє резюме", new_category_employer_employeesparam_path(@category, @employer) %>
+            <%= link_to "Відправити моє резюме", new_category_employer_employeesparam_path(@category, @employer), class: "btn btn-outline-dark"  %>
         </li>
     </div>
 <% end %>
-
-
-
-
